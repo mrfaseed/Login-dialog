@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        background-color: black;
+        color: white;
+    }
+    .home {
+        display: flex;
+        justify-content: space-around;
+    }
+    .child1, .child2, .child3, .child4, .child5 {
+        font-size: 1.7rem;
+        color: white;
+        text-decoration: none;
+        transition: all 1s ease-in-out;
+    }
+    .child1:hover, .child2:hover, .child3:hover, .child4:hover, .child5:hover {
+        text-decoration: dashed;
+        text-decoration-color: white;
+        text-decoration-line: underline;
+    }
+    dialog {
+        background-color: white;
+        color: black;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    #closeDialog{
+        display: block;
+        margin-left: 67px;
+        margin-top: 15px;
+    }
+    @media screen and (max-width: 600px) {
+        .child1, .child2, .child3, .child4, .child5 {
+        font-size: 1rem;
+        color: white;
+        text-decoration: none;
+        transition: all 1s ease-in-out;
+    }
+}
+    </style>
+</head>
+<body>
+
+<div class="home">
+    <a href="#" class="child1">Home</a>
+    <a href="#" class="child2">Contact us</a>
+    <a href="#" class="child3">Share</a>
+    <a href="#" class="child4" id="Login">Login</a>
+    <a href="#" class="child5">Sign up</a>
+</div>
+
+<dialog id="Dialog">
+    Login is temporarily blocked.
+    <button id="closeDialog">Close</button>
+</dialog>
+
+<script>
+    let dialog = document.getElementById("Dialog");
+    let login = document.getElementById("Login");
+    let closeDialog = document.getElementById("closeDialog");
+
+    login.addEventListener('click', () => {
+        dialog.showModal();
+    });
+
+    closeDialog.addEventListener('click', () => {
+        dialog.close();
+    });
+</script>
+
+</body>
+</html>
